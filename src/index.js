@@ -1,7 +1,7 @@
 //POSTだけできない
 const express = require("express");
 const app = express();
-//const PORT = process.env.PORT || 3000; //Heroku用
+const PORT = process.env.PORT || 3000; //Heroku用
 const bodyParser = require("body-parser");
 //const post = require("v1/post");
 
@@ -25,11 +25,11 @@ app.post("/api/post", (req, res) => {
 });
 
 //ローカル用サーバ/*
-app.listen(3000, () => {
+/*app.listen(3000, () => {
   console.log("Application started");
-});
+});*/
 
-//process.env.NOW_REGION ? (module.express = app) : app.listen(PORT); //Heroku用
+process.env.NOW_REGION ? (module.express = app) : app.listen(PORT); //Heroku用
 
 //http://localhost:3000
 
