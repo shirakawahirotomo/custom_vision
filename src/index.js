@@ -14,12 +14,12 @@ app.get("/api/get/", (req, res) => {
   res.send("Hello World(*'▽')/api/getからやで");
 });
 
-//app.use(bodyParser.json());
+app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 //post.post();
 
 app.post("/api/post", (req, res) => {
-  console.log(req.body.test);
+  console.log(req.body);
   res.send("POSTされたデータを取得できました");
   //res.status(200);
 });
@@ -27,8 +27,8 @@ app.post("/api/post", (req, res) => {
 //ローカル用サーバ/*
 /*app.listen(3000, () => {
   console.log("Application started");
-});*/
-
+});
+*/
 process.env.NOW_REGION ? (module.express = app) : app.listen(PORT); //Heroku用
 
 //http://localhost:3000
