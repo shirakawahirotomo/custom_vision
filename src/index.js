@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 //post.post();
 
 app.post("/api/post", (req, res) => {
-  console.log(req.body);
+  console.log(req.body.test);
   res.send("POSTされたデータを取得できました");
   //res.status(200);
 });
