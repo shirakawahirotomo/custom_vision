@@ -27,6 +27,7 @@ app.post("/api/post", (req, res) => {
   //res.status(200);
 });
 
+/*
 const accessToken =
   "2URYJ4A8RIw4FCltZeYploctm4mVqGAlxEnu340WQV+P93maUNOrOaX6EZRvaHLTAUlsPWMqK7aFb6KW1NHSMcWvZbnOgmTUwh/GE+zu62EiEZJ+Tp+NYnhFHkIlR3GRa1x0OwwtUOFd7J3crIwE4wdB04t89/1O/w1cDnyilFU=";
 
@@ -43,7 +44,7 @@ request(options, function (error, response, body) {
   const buffer = new Buffer.from(body);
   console.log(buffer);
 });
-
+*/
 //ローカル用サーバ/*
 /*app.listen(3000, () => {
   console.log("Application started");
