@@ -39,6 +39,11 @@ const options = {
   encoding: null,
 };
 
+request(options, function (error, response, body) {
+  const buffer = new Buffer.from(body);
+  console.log(buffer);
+});
+
 //ローカル用サーバ/*
 /*app.listen(3000, () => {
   console.log("Application started");
