@@ -1,4 +1,3 @@
-//POSTだけできない
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000; //Heroku用
@@ -14,13 +13,14 @@ app.get("/api/get/", (req, res) => {
   res.send("Hello World(*'▽')/api/getからやで");
 });
 
-app.use(bodyParser.json());
+app.use(bodyParser.json()); //必須
 app.use(express.urlencoded({ extended: true }));
 //post.post();
 
-app.post("/api/post", (req, res) => {
-  console.log(req.body);
-  res.send("POSTされたデータを取得できました");
+app.post("/", (req, res) => {
+  const data = req.body;
+  console.log("req.bodyだよ", data);
+  res.send("APIはOkay!!");
   //res.status(200);
 });
 
