@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000; //Heroku用
 const bodyParser = require("body-parser");
 //const post = require("v1/post");
-const request = require("request");
+//const request = require("request");
 
 app.get("/", (req, res) => {
   //res.send("Hello World(*'▽')");
