@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 app.get("/api/get/", (req, res) => {
   res.send("Hello World(*'▽')/api/getからやで");
 });
-
+app.use(express.json());
 app.use(bodyParser.json()); //必須
 app.use(express.urlencoded({ extended: true }));
 //post.post();
