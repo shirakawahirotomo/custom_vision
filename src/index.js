@@ -22,7 +22,7 @@ app.post("/api/post", (req, res) => {
   console.log("req.bodyだよ", data);
   res.send("APIはOkay!!");
   const messageId = data["events"][0]["message"]["id"];
-  console.log(messageId);
+  console.log("画像取得", messageId);
   //res.status(200);
 });
 
