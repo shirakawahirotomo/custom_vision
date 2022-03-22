@@ -3,6 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000; //Heroku用
 const bodyParser = require("body-parser");
 //const post = require("v1/post");
+const request = require("request");
 
 app.get("/", (req, res) => {
   //res.send("Hello World(*'▽')");
@@ -25,6 +26,18 @@ app.post("/api/post", (req, res) => {
   console.log("画像取得", messageId);
   //res.status(200);
 });
+
+const accessToken =
+  "2URYJ4A8RIw4FCltZeYploctm4mVqGAlxEnu340WQV+P93maUNOrOaX6EZRvaHLTAUlsPWMqK7aFb6KW1NHSMcWvZbnOgmTUwh/GE+zu62EiEZJ+Tp+NYnhFHkIlR3GRa1x0OwwtUOFd7J3crIwE4wdB04t89/1O/w1cDnyilFU=";
+
+const options = {
+  url: "https://api-data.line.me/v2/bot/message/15786661476316/content",
+  method: "get",
+  headers: {
+    Authorization: "Bearer " + accessToken,
+  },
+  encoding: null,
+};
 
 //ローカル用サーバ/*
 /*app.listen(3000, () => {
