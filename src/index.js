@@ -17,7 +17,7 @@ app.use(bodyParser.json()); //必須
 app.use(express.urlencoded({ extended: true }));
 //post.post();
 
-app.post("/", (req, res) => {
+app.post("/api/post", (req, res) => {
   const data = req.body;
   console.log("req.bodyだよ", data);
   res.send("APIはOkay!!");

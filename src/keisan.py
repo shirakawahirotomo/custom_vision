@@ -13,13 +13,13 @@ c = []
 for k in range(10000):
     for l in range(10000):
         if a[k] == b[l]:
-            print("平方数：",a[k])
+            ##print("平方数：",a[k])
             c.append(a[k])
 
 for m in range(10000):
     for n in range(len(c)):
         if m*m == c[n]:
-            print("m:",m)
+            print("平方数:", c[n], "平方根:",m)
 end_time = time.perf_counter()
 
 print(end_time - start_time)
