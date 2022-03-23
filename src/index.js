@@ -32,7 +32,7 @@ const accessToken =
   "2URYJ4A8RIw4FCltZeYploctm4mVqGAlxEnu340WQV+P93maUNOrOaX6EZRvaHLTAUlsPWMqK7aFb6KW1NHSMcWvZbnOgmTUwh/GE+zu62EiEZJ+Tp+NYnhFHkIlR3GRa1x0OwwtUOFd7J3crIwE4wdB04t89/1O/w1cDnyilFU=";
 
 const options = {
-  url: "https://api-data.line.me/v2/bot/message/15791604175625/content",
+  url: "https://api-data.line.me/v2/bot/message/messageId/content",
   method: "get",
   headers: {
     Authorization: "Bearer " + accessToken,
