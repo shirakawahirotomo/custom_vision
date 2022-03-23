@@ -2,37 +2,38 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000; //Heroku用
 const bodyParser = require("body-parser");
-//const post = require("v1/post");
-//const request = require("request");
+const request = require("request");
 
-app.get("/", (req, res) => {
-  //res.send("Hello World(*'▽')");
-  res.json({ message: "こちらはルートパスです(V)o￥o(V)" });
-});
+// app.get("/", (req, res) => {
+//   //res.send("Hello World(*'▽')");
+//   res.json({ message: "こちらはルートパスです(V)o￥o(V)" });
+// });
 
+/*
 app.get("/api/get/", (req, res) => {
   res.send("Hello World(*'▽')/api/getからやで");
 });
 app.use(express.json());
 app.use(bodyParser.json()); //必須
 app.use(express.urlencoded({ extended: true }));
-//post.post();
+*/
 
-app.post("/api/post", (req, res) => {
+const ID = app.post("/api/post", (req, res) => {
   const data = req.body;
   console.log("req.bodyだよ", data);
   res.send("APIはOkay!!");
   const messageId = data["events"][0]["message"]["id"];
   console.log(messageId);
   //res.status(200);
+  return messageId
 });
 
-/*
+
 const accessToken =
   "2URYJ4A8RIw4FCltZeYploctm4mVqGAlxEnu340WQV+P93maUNOrOaX6EZRvaHLTAUlsPWMqK7aFb6KW1NHSMcWvZbnOgmTUwh/GE+zu62EiEZJ+Tp+NYnhFHkIlR3GRa1x0OwwtUOFd7J3crIwE4wdB04t89/1O/w1cDnyilFU=";
 
 const options = {
-  url: "https://api-data.line.me/v2/bot/message/15786661476316/content",
+  url: "https://api-data.line.me/v2/bot/message/ID/content",
   method: "get",
   headers: {
     Authorization: "Bearer " + accessToken,
@@ -40,11 +41,11 @@ const options = {
   encoding: null,
 };
 
-request(options, function (error, response, body) {
+request(options, (error, response, body)=> {
   const buffer = new Buffer.from(body);
   console.log(buffer);
 });
-*/
+
 //ローカル用サーバ/*
 /*app.listen(3000, () => {
   console.log("Application started");
