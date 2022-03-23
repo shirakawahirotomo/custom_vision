@@ -4,18 +4,19 @@ const PORT = process.env.PORT || 3000; //Heroku用
 const bodyParser = require("body-parser");
 const request = require("request");
 
-app.get("/", (req, res) => {
-  //res.send("Hello World(*'▽')");
-  res.json({ message: "こちらはルートパスです(V)o￥o(V)" });
-});
+// app.get("/", (req, res) => {
+//   //res.send("Hello World(*'▽')");
+//   res.json({ message: "こちらはルートパスです(V)o￥o(V)" });
+// });
 
+/*
 app.get("/api/get/", (req, res) => {
   res.send("Hello World(*'▽')/api/getからやで");
 });
 app.use(express.json());
 app.use(bodyParser.json()); //必須
 app.use(express.urlencoded({ extended: true }));
-//post.post();
+*/
 
 const ID = app.post("/api/post", (req, res) => {
   const data = req.body;
