@@ -25,10 +25,10 @@ const ID = app.post("/api/post", (req, res) => {
   const messageId = data["events"][0]["message"]["id"];
   console.log(messageId);
   //res.status(200);
-  return messageId
+  return messageId;
 });
 
-
+/*
 const accessToken =
   "2URYJ4A8RIw4FCltZeYploctm4mVqGAlxEnu340WQV+P93maUNOrOaX6EZRvaHLTAUlsPWMqK7aFb6KW1NHSMcWvZbnOgmTUwh/GE+zu62EiEZJ+Tp+NYnhFHkIlR3GRa1x0OwwtUOFd7J3crIwE4wdB04t89/1O/w1cDnyilFU=";
 
@@ -40,11 +40,13 @@ const options = {
   },
   encoding: null,
 };
-
-request(options, (error, response, body)=> {
+*/
+/*
+request(options, (error, response, body) => {
   const buffer = new Buffer.from(body);
   console.log(buffer);
 });
+*/
 
 //ローカル用サーバ/*
 /*app.listen(3000, () => {
@@ -54,24 +56,6 @@ request(options, (error, response, body)=> {
 process.env.NOW_REGION ? (module.express = app) : app.listen(PORT); //Heroku用
 
 //http://localhost:3000
-
-/*
-//ネットにあったPOST
-const express = require("express");
-const bodyParser = require("body-parser");
-const app = express();
-
-app.use(bodyParser.json());
-
-app.post("/", (req, res) => {
-  console.log(req.body);
-  res.status().json({
-    message: "Hello!",
-  });
-});
-
-app.listen(3000, () => console.log("Listening on port 3000..."));
-*/
 
 /*
 //がいさんのコード
