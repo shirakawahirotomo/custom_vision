@@ -3,7 +3,8 @@ const app = express();
 const PORT = process.env.PORT || 3000; //Heroku用
 const bodyParser = require("body-parser");
 const request = require("request");
-const accessToken ="2URYJ4A8RIw4FCltZeYploctm4mVqGAlxEnu340WQV+P93maUNOrOaX6EZRvaHLTAUlsPWMqK7aFb6KW1NHSMcWvZbnOgmTUwh/GE+zu62EiEZJ+Tp+NYnhFHkIlR3GRa1x0OwwtUOFd7J3crIwE4wdB04t89/1O/w1cDnyilFU=";
+const accessToken =
+  "2URYJ4A8RIw4FCltZeYploctm4mVqGAlxEnu340WQV+P93maUNOrOaX6EZRvaHLTAUlsPWMqK7aFb6KW1NHSMcWvZbnOgmTUwh/GE+zu62EiEZJ+Tp+NYnhFHkIlR3GRa1x0OwwtUOFd7J3crIwE4wdB04t89/1O/w1cDnyilFU=";
 
 app.use(express.json());
 app.use(bodyParser.json()); //必須
@@ -11,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.post("/", (req, res) => {
   const data = req.body["events"][0]["messages"][id];
-  
+
   console.log("req.bodyだよ", data);
   res.send("APIはOkay!!");
 
@@ -24,12 +25,11 @@ app.post("/", (req, res) => {
     encoding: null,
   };
 
-
   request(options, (error, response, body) => {
     const buffer = new Buffer.from(body);
-    console.log(buffer); }
-  );
-
+    console.log(buffer);
+  });
+});
 process.env.NOW_REGION ? (module.express = app) : app.listen(PORT); //Heroku用
 
 //http://localhost:3000
