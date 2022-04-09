@@ -11,13 +11,13 @@ app.use(bodyParser.json()); //必須
 app.use(express.urlencoded({ extended: true }));
 
 app.post("/", (req, res) => {
-  const data = req.body.events[0].messages.id;
+  const data = req.body.events[0].messages;
 
   console.log("req.bodyだよ", data);
   res.send("APIはOkay!!");
 
   const options = {
-    url: "https://api-data.line.me/v2/bot/message/${data}/content",
+    url: "https://api-data.line.me/v2/bot/message/${req.body.events[0].messages.id}/content",
     method: "get",
     headers: {
       Authorization: "Bearer " + accessToken,
