@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(bodyParser.json()); //必須
 app.use(express.urlencoded({ extended: true }));
 
-app.post("/api/post", (req, res) => {
+app.post("/", (req, res) => {
   const data = req.body["events"][0]["messages"][id];
   
   console.log("req.bodyだよ", data);
