@@ -15,10 +15,9 @@ app.post("/", (req, res) => {
 
   console.log("req.bodyの中身のメッセージID", data);
   res.send("AP:ok");
-});
-/*
+
   const options = {
-    url: "https://api-data.line.me/v2/bot/message/${req.body.events[0].messages.id}/content",
+    url: "https://api-data.line.me/v2/bot/message/data/content",
     method: "get",
     headers: {
       Authorization: "Bearer " + accessToken,
@@ -29,16 +28,16 @@ app.post("/", (req, res) => {
   request(options, (error, response, body) => {
     const buffer = new Buffer.from(body);
     console.log(buffer);
-    const option = {
+    /*const option = {
       uri:
       method:"post",
       headers:{
         "Content-Type":"application/octet-stream",
         "Prediction-Key":""
       }
+    }*/
   });
 });
-*/
 process.env.NOW_REGION ? (module.express = app) : app.listen(PORT); //Heroku用
 
 //http://localhost:3000
