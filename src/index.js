@@ -15,8 +15,7 @@ app.post("/", (req, res) => {
 
   console.log("req.bodyだよ", data);
   res.send("APIはOkay!!");
-});
-/*
+
   const options = {
     url: "https://api-data.line.me/v2/bot/message/${req.body.events[0].messages.id}/content",
     method: "get",
@@ -25,7 +24,8 @@ app.post("/", (req, res) => {
     },
     encoding: null,
   };
-
+});
+/*
   request(options, (error, response, body) => {
     const buffer = new Buffer.from(body);
     console.log(buffer);
