@@ -13,9 +13,10 @@ app.use(express.urlencoded({ extended: true }));
 app.post("/", (req, res) => {
   const data = req.body; //.events[0].messages;
 
-  console.log("req.bodyだよ", data);
-  res.send("APIはOkay!!");
-
+  console.log("req.body", data);
+  res.send("AP:ok");
+});
+/*
   const options = {
     url: "https://api-data.line.me/v2/bot/message/${req.body.events[0].messages.id}/content",
     method: "get",
@@ -24,8 +25,7 @@ app.post("/", (req, res) => {
     },
     encoding: null,
   };
-});
-/*
+
   request(options, (error, response, body) => {
     const buffer = new Buffer.from(body);
     console.log(buffer);
