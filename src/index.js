@@ -11,7 +11,7 @@ app.use(bodyParser.json()); //必須
 app.use(express.urlencoded({ extended: true }));
 
 app.post("/", (req, res) => {
-  const data = req.body; //.events[0].messages;
+  const data = req.body.events[0].message; //.events[0].messages;
 
   console.log("req.body", data);
   res.send("AP:ok");
