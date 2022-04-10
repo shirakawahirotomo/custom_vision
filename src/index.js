@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.post("/", (req, res) => {
   const data = req.body.events[0].message; //.events[0].messages;
 
-  console.log("req.body", data);
+  console.log("req.bodyの中身", data);
   res.send("AP:ok");
 });
 /*
