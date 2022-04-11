@@ -14,7 +14,7 @@ app.post("/", (req, res) => {
   const data = req.body.events[0].message.id; //.events[0].messages;
 
   console.log("req.bodyの中身のメッセージID", data);
-  res.send("AP:ok");
+  res.send("API:ok");
 
   const options = {
     url: "https://api-data.line.me/v2/bot/message/data/content",
@@ -28,14 +28,14 @@ app.post("/", (req, res) => {
   request(options, (error, response, body) => {
     const buffer = new Buffer.from(body);
     console.log(buffer);
-    /*const option = {
-      uri:
-      method:"post",
-      headers:{
-        "Content-Type":"application/octet-stream",
-        "Prediction-Key":""
-      }
-    }*/
+    const option = {
+      uri: "https://japaneast.api.cognitive.microsoft.com/subscriptions/009d71fc-f885-4d65-841d-aa61b72ca2f4/resourceGroups/leadHACK/providers/Microsoft.CognitiveServices/accounts/leadHACK",
+      method: "post",
+      headers: {
+        "Content-Type": "application/octet-stream",
+        "Prediction-Key": "91ed8f86f51a4c01a35f9a3ec20e98d3",
+      },
+    };
   });
 });
 process.env.NOW_REGION ? (module.express = app) : app.listen(PORT); //Heroku用
