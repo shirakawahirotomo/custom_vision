@@ -13,6 +13,7 @@ app.post("/", function (req, res) {
 ​
   console.log("req.body", data);
   res.send("api: OK");
+  
   const options = {
     url: `https://api-data.line.me/v2/bot/message/${req.body.events[0].message.id}/content`,
     method: "get",
