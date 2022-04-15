@@ -41,7 +41,7 @@ app.post("/", (req, res) => {
 
     request.post(option, function (error, res, body) {
       console.log("bodyの中身", body);
-      console.log("replyTokenの中身", replyToken);
+      //console.log("replyTokenの中身", replyToken);
       const resBody = JSON.parse(body);
     });
   });
