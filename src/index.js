@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(bodyParser.json()); //必須
 app.use(express.urlencoded({ extended: true }));
 
-app.post("/", (req, res) => {
+app.post("/", function (req, res) {
   const data = req.body.events[0].message.id; //.events[0].messages;
   //const replyToken = req.body["events"][0]["replyToken"];
 
