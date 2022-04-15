@@ -29,12 +29,13 @@ app.post("/", (req, res) => {
     const buffer = new Buffer.from(body);
     console.log(buffer);
     const option = {
-      uri: "https://japaneast.api.cognitive.microsoft.com/subscriptions/009d71fc-f885-4d65-841d-aa61b72ca2f4/resourceGroups/leadHACK/providers/Microsoft.CognitiveServices/accounts/leadHACK",
+      uri: "https://leadhacktesteastjapan-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/3995706a-5622-438d-afce-71de27a57ca5/classify/iterations/Iteration1/image",
       method: "post",
       headers: {
         "Content-Type": "application/octet-stream",
-        "Prediction-Key": "91ed8f86f51a4c01a35f9a3ec20e98d3",
+        "Prediction-Key": "034d56b2970f4167b38c1278b84ecdb7",
       },
+      body: buffer,
     };
   });
 });
