@@ -38,9 +38,10 @@ app.post("/", (req, res) => {
       body: buffer,
     };
     request.post(option, function (error, res, body) {
-      console.log("bodyの中身",body);
+      console.log("bodyの中身", body);
       //console.log(replyToken);
       // const resBody = JSON.parse(body);
+    });
   });
 });
 process.env.NOW_REGION ? (module.express = app) : app.listen(PORT); //Heroku用
