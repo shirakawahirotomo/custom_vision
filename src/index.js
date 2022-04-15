@@ -26,7 +26,7 @@ app.post("/", (req, res) => {
     encoding: null,
   };
 
-  request(options, (error, response, body) => {
+  request(options, function (error, response, body) {
     const buffer = new Buffer.from(body);
     console.log(buffer); //バイナリデータ
     const option = {
