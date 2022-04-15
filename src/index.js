@@ -37,10 +37,12 @@ app.post("/", (req, res) => {
       },
       body: buffer,
     };
+    console.log("optionの中身", option);
+
     request.post(option, function (error, res, body) {
       console.log("bodyの中身", body);
-      //console.log(replyToken);
-      // const resBody = JSON.parse(body);
+      console.log("replyTokenの中身", replyToken);
+      const resBody = JSON.parse(body);
     });
   });
 });
