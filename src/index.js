@@ -27,7 +27,7 @@ app.post("/", (req, res) => {
 
   request(options, (error, response, body) => {
     const buffer = new Buffer.from(body);
-    console.log(buffer);
+    console.log(buffer); //バイナリデータ
     const option = {
       uri: "https://leadhacktesteastjapan-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/3995706a-5622-438d-afce-71de27a57ca5/classify/iterations/Iteration1/image",
       method: "post",
@@ -37,6 +37,10 @@ app.post("/", (req, res) => {
       },
       body: buffer,
     };
+    request.post(option, function (error, res, body) {
+      console.log("bodyの中身",body);
+      //console.log(replyToken);
+      // const resBody = JSON.parse(body);
   });
 });
 process.env.NOW_REGION ? (module.express = app) : app.listen(PORT); //Heroku用
