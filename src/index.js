@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.post("/", (req, res) => {
   const data = req.body.events[0].message.id; //.events[0].messages;
+  const replyToken = req.body["events"][0]["replyToken"];
 
   console.log("req.bodyの中身のメッセージID", data);
   res.send("API:ok");
@@ -40,9 +41,8 @@ app.post("/", (req, res) => {
     console.log("optionの中身", option);
 
     request.post(option, function (error, res, body) {
-      console.log("resの中身", res);
       console.log("bodyの中身", body);
-      //console.log("replyTokenの中身", replyToken);
+      console.log("replyTokenの中身", replyToken);
       const resBody = JSON.parse(body);
     });
   });
