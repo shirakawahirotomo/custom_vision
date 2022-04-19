@@ -27,7 +27,7 @@ app.post("/", function (req, res) {
   };
 
   request(options, function (error, response, body) {
-    const buffer = new Buffer.from(body);
+    const buffer = new Buffer.from(body); //インスタンス生成
     console.log(buffer); //バイナリデータ
     const option = {
       uri: "https://leadhacktesteastjapan-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/3995706a-5622-438d-afce-71de27a57ca5/classify/iterations/Iteration1/image",
